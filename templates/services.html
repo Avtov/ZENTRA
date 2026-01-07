@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Услуги — ZENTRA</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+</head>
+<body class="zentra-body">
+
+  <!-- HEADER -->
+  <header class="zentra-header fixed top-0 w-full z-50 px-8 py-5 flex justify-between items-center">
+    <a href="{{ url_for('home') }}" class="text-lg tracking-[0.4em] font-bold">ZENTRA</a>
+
+    <nav class="flex gap-10 text-sm uppercase tracking-widest">
+      <a href="{{ url_for('home') }}" class="nav-item">Главная</a>
+      <a href="{{ url_for('projects') }}" class="nav-item">Проекты</a>
+      <a href="{{ url_for('contacts') }}" class="nav-item">Контакты</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="zentra-hero pt-40 pb-16 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6" data-aos="fade-up">
+      Наши услуги
+    </h1>
+    <p class="hero-desc max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+      Предлагаем полный спектр веб-услуг для малого бизнеса и личных проектов. Работаем индивидуально, с вниманием к деталям.
+    </p>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="px-6 md:px-16 pb-32 grid md:grid-cols-3 gap-10">
+
+    <div class="service-card" data-aos="zoom-in">
+      <div class="service-overlay"></div>
+      <h3>Лендинг</h3>
+      <p class="service-desc">
+        Одностраничный сайт для презентации продукта или услуги. Включает дизайн, верстку, адаптивность.
+      </p>
+      <p class="service-price">от 15 000 ₽</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="service-overlay"></div>
+      <h3>Корпоративный сайт</h3>
+      <p class="service-desc">
+        Многостраничный сайт для компании. Включает структуру, навигацию, базовую CMS, адаптивный дизайн.
+      </p>
+      <p class="service-price">от 40 000 ₽</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="service-overlay"></div>
+      <h3>Брендинг и айдентика</h3>
+      <p class="service-desc">
+        Разработка логотипа, цветовой схемы и фирменного стиля для сайта и соцсетей.
+      </p>
+      <p class="service-price">от 10 000 ₽</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+      <div class="service-overlay"></div>
+      <h3>UI/UX дизайн</h3>
+      <p class="service-desc">
+        Проектирование интерфейсов с упором на удобство пользователя и визуальную эстетику.
+      </p>
+      <p class="service-price">от 20 000 ₽</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+      <div class="service-overlay"></div>
+      <h3>Редизайн сайта</h3>
+      <p class="service-desc">
+        Обновление существующего сайта, улучшение дизайна, оптимизация для мобильных устройств.
+      </p>
+      <p class="service-price">от 15 000 ₽</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+      <div class="service-overlay"></div>
+      <h3>Консультации</h3>
+      <p class="service-desc">
+        Помощь в планировании проекта, выборе платформы и структуры сайта. 1 час онлайн-консультации.
+      </p>
+      <p class="service-price">от 1 500 ₽/час</p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="zentra-footer py-16 text-center text-gray-500 text-sm">
+    © 2026 ZENTRA — Digital Architecture
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 900 });
+  </script>
+
+</body>
+</html>

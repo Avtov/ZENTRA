@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZENTRA — Premium Web Architect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+  <style>
+    .interactive-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid #e10600;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      pointer-events: none;
+      transition: transform 0.2s ease-out;
+    }
+  </style>
+</head>
+
+<body class="zentra-body">
+
+  <!-- HEADER -->
+  <header class="zentra-header flex items-center justify-between px-6 py-3 md:px-12 bg-[#0b0b0d] shadow-lg z-50 fixed w-full top-0">
+    <div class="text-2xl md:text-3xl font-bold tracking-widest text-white">ZENTRA</div>
+
+    <nav class="hidden md:flex gap-8 text-gray-400 font-semibold text-base">
+      <a href="{{ url_for('projects') }}" class="nav-item">Проекты</a>
+      <a href="{{ url_for('services') }}" class="nav-item">Услуги</a>
+      <a href="{{ url_for('contacts') }}" class="nav-item">Контакты</a>
+    </nav>
+
+    <div class="md:hidden">
+      <button id="burger" class="text-gray-400 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="zentra-hero flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-32 relative mt-20">
+    <div class="md:max-w-xl z-20">
+      <p class="jp-text" data-aos="fade-up">デジタル・アーキテクト</p>
+      <h1 class="animate__animated animate__fadeInUp text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+        Premium Web<br>Experience
+      </h1>
+      <p class="hero-desc text-gray-400 mb-10" data-aos="fade-up" data-aos-delay="200">
+        Я создаю выразительные сайты с характером.<br>
+        Минимализм, архитектура и скорость.
+      </p>
+      <div class="hero-actions flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">
+        <a id="openModal" class="btn-primary text-center cursor-pointer">Обсудить проект</a>
+        <a href="{{ url_for('projects') }}" class="btn-outline text-center">Смотреть работы</a>
+      </div>
+    </div>
+
+    <div class="hero-graphics relative mt-10 md:mt-0 md:ml-10 flex-1 flex justify-center items-center h-96">
+      <div class="interactive-circle" style="width:50px; height:50px; top:50px; left:20%;"></div>
+      <div class="interactive-circle" style="width:80px; height:80px; top:100px; left:60%;"></div>
+      <div class="interactive-circle" style="width:40px; height:40px; top:200px; left:30%;"></div>
+      <div class="interactive-circle" style="width:70px; height:70px; top:150px; left:45%;"></div>
+      <div class="interactive-circle" style="width:60px; height:60px; top:250px; left:70%;"></div>
+      <div class="interactive-circle" style="width:30px; height:30px; top:300px; left:55%;"></div>
+      <div class="interactive-circle" style="width:90px; height:90px; top:50px; left:75%;"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="zentra-features px-6 md:px-12 py-24 grid md:grid-cols-3 gap-8 text-center">
+    <div class="feature relative overflow-hidden rounded-2xl p-10 transition-transform duration-500 hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-red-600/30 via-red-600/10 to-white/5 backdrop-blur-lg cursor-pointer" data-aos="zoom-in">
+      <h3 class="text-2xl font-bold mb-4 text-white drop-shadow-lg">Архитектура</h3>
+      <p class="text-gray-300 mb-6">Сайт как система</p>
+    </div>
+
+    <div class="feature relative overflow-hidden rounded-2xl p-10 transition-transform duration-500 hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-red-600/30 via-red-600/10 to-white/5 backdrop-blur-lg cursor-pointer" data-aos="zoom-in" data-aos-delay="150">
+      <h3 class="text-2xl font-bold mb-4 text-white drop-shadow-lg">Скорость</h3>
+      <p class="text-gray-300 mb-6">Максимальный performance</p>
+    </div>
+
+    <div class="feature relative overflow-hidden rounded-2xl p-10 transition-transform duration-500 hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-red-600/30 via-red-600/10 to-white/5 backdrop-blur-lg cursor-pointer" data-aos="zoom-in" data-aos-delay="300">
+      <h3 class="text-2xl font-bold mb-4 text-white drop-shadow-lg">Стиль</h3>
+      <p class="text-gray-300 mb-6">Дизайн уровня 2026</p>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-[999] flex items-center justify-center">
+    <div class="relative w-full max-w-lg mx-4 bg-[#0b0b0d] border border-white/10 rounded-2xl p-8 shadow-2xl animate__animated animate__fadeInUp">
+      <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+      <h2 class="text-3xl font-bold mb-6 text-center">Обсудить проект</h2>
+      <form id="projectForm" class="flex flex-col gap-4">
+        <input type="text" name="name" placeholder="Имя и Отчество" class="bg-transparent border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition"/>
+        <input type="text" name="contact" placeholder="Telegram или VK" class="bg-transparent border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition"/>
+        <textarea name="wishes" rows="4" placeholder="Пожелания по сайту" class="bg-transparent border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition resize-none"></textarea>
+        <button type="submit" class="btn-primary mt-4">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="zentra-footer px-6 md:px-12 py-10 border-t border-white/10 text-sm text-gray-500 text-center">
+    © 2026 ZENTRA — Independent Digital Architect
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 900 });
+
+    const burger = document.getElementById('burger');
+    burger?.addEventListener('click', () => {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('hidden');
+      nav.classList.toggle('flex');
+      nav.classList.toggle('flex-col');
+      nav.classList.toggle('gap-4');
+      nav.classList.toggle('mt-4');
+    });
+
+    const openModal = document.getElementById('openModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    openModal.addEventListener('click', () => {
+      modalOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modalOverlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // AJAX форма
+    const form = document.getElementById("projectForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch("/submit_form", { method: "POST", body: formData });
+      if (response.ok) {
+        alert("Заявка отправлена! В ближайшее время свяжусь с вами.");
+        form.reset();
+        modalOverlay.classList.add("hidden");
+        document.body.style.overflow = '';
+      } else {
+        alert("Ошибка отправки. Проверьте поля.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/png">
+  <meta charset="UTF-8">
+  <title>Проекты — ZENTRA</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+</head>
+
+<body class="zentra-body">
+
+  <!-- HEADER -->
+</body>
+
+<body class="zentra-body">
+
+  <!-- HEADER -->
+  <header class="zentra-header flex items-center justify-between px-6 py-3 md:px-12 bg-[#0b0b0d] shadow-lg z-50 fixed w-full top-0">
+    <!-- Logo -->
+    <div class="flex items-center gap-4">
+      <div class="text-2xl md:text-3xl font-bold tracking-widest text-white">ZENTRA</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex gap-8 text-gray-400 font-semibold text-base">
+      <a href="{{ url_for('home') }}" class="nav-item">Главная</a>
+      <a href="{{ url_for('services') }}" class="nav-item">Услуги</a>
+      <a href="{{ url_for('contacts') }}" class="nav-item">Контакты</a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+      <button id="burger" class="text-gray-400 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="zentra-hero text-center pt-40 pb-28">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6" data-aos="fade-up">
+      Наши проекты
+    </h1>
+    <p class="hero-desc mx-auto" data-aos="fade-up" data-aos-delay="150">
+      Мы проектируем цифровые продукты, где форма подчиняется логике, а дизайн усиливает смысл.
+    </p>
+  </section>
+
+<!-- PROJECT CAROUSEL -->
+<section class="px-6 md:px-16 pb-32 relative">
+
+  <div class="carousel-container overflow-hidden relative">
+    <div class="carousel-track flex transition-transform duration-700">
+      <!-- Слайды (дублируем для бесконечной прокрутки) -->
+      <div class="project-card flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+        <h3 class="text-2xl font-bold mb-2">Корпоративный сайт</h3>
+        <p class="text-gray-400">Архитектурный подход</p>
+      </div>
+      <div class="project-card accent flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+          <img src="{{ url_for('static', filename='img/photo_2026-01-07_23-39-58.jpg') }}" alt="Брендинг" class="rounded-lg mb-4">
+        <h3 class="text-2xl font-bold mb-2">Веб-платформа</h3>
+        <p class="text-gray-400">UX / Performance</p>
+      </div>
+      <div class="project-card flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+          <img src="{{ url_for('static', filename='img/photo_2026-01-07_23-38-11.jpg') }}" alt="Брендинг" class="rounded-lg mb-4">
+        <h3 class="text-2xl font-bold mb-2">Лендинг</h3>
+        <p class="text-gray-400">Минимализм</p>
+      </div>
+      <div class="project-card flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+          <img src="{{ url_for('static', filename='img/photo_2026-01-07_23-35-09.jpg') }}" alt="Брендинг" class="rounded-lg mb-4">
+        <h3 class="text-2xl font-bold mb-2">SaaS-сервис</h3>
+        <p class="text-gray-400">Система и масштаб</p>
+      </div>
+      <div class="project-card accent flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+        <h3 class="text-2xl font-bold mb-2">Крипто-проект</h3>
+        <p class="text-gray-400">Web3 / UI</p>
+      </div>
+      <div class="project-card flex-shrink-0 w-full md:w-1/3 mx-2">
+          <img src="{{ url_for('static', filename='img/photo_2026-01-07_23-25-01.jpg') }}" alt="Брендинг" class="rounded-lg mb-4">
+        <div class="project-overlay"></div>
+        <h3 class="text-2xl font-bold mb-2">Брендинг</h3>
+        <p class="text-gray-400">Айдентика</p>
+      </div>
+
+      <!-- Дублируем все карточки для бесконечной прокрутки -->
+      <div class="project-card flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+        <h3 class="text-2xl font-bold mb-2">Корпоративный сайт</h3>
+        <p class="text-gray-400">Архитектурный подход</p>
+      </div>
+      <div class="project-card accent flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+        <h3 class="text-2xl font-bold mb-2">Веб-платформа</h3>
+        <p class="text-gray-400">UX / Performance</p>
+      </div>
+      <div class="project-card flex-shrink-0 w-full md:w-1/3 mx-2">
+        <div class="project-overlay"></div>
+        <h3 class="text-2xl font-bold mb-2">Лендинг</h3>
+        <p class="text-gray-400">Минимализм</p>
+      </div>
+      <!-- Можно дублировать все карточки столько раз, сколько нужно для плавного loop -->
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="zentra-footer px-6 md:px-12 py-10 border-t border-white/10 text-sm text-gray-500 text-center md:text-central">
+    © 2026 ZENTRA — Independent Digital Architect
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 900 });
+    lucide.createIcons();
+  </script>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const slideWidth = slides[0].getBoundingClientRect().width + 16; // учитываем margin
+let position = 0;
+
+function animateCarousel() {
+  position += 3; // скорость прокрутки, чем больше число — тем быстрее
+  if (position >= slideWidth * (slides.length / 2)) {
+    position = 0; // сброс для бесконечной прокрутки
+  }
+  track.style.transform = `translateX(-${position}px)`;
+  requestAnimationFrame(animateCarousel);
+}
+
+animateCarousel();
+</script>
+
+</body>
+</html>
